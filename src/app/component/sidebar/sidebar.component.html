@@ -1,34 +1,42 @@
 <aside class="w-64" aria-label="Sidebar">
-  <div class="overflow-y-auto px-5 bg-gray-50">
-    <ul class="space-y-2">
+  <div
+    class="overflow-y-auto px-10 bg-white h-screen border-r-2 border-neutralGrey"
+  >
+    <ul class="space-y-2 pb-3.5">
+      <li class="text-darkGrey font-medium text-xs mb-4">Admin tools</li>
       <li *ngFor="let item of dataSidebarUp">
         <a
           href="#"
-          class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg"
+          class="flex items-center justify-between h-[56px] text-sm font-semibold py-2 text-darkGrey"
         >
-          <img
-            class="w-6 h-6 text-gray-500 transition duration-75"
-            src="{{ item.img }}"
-            alt=""
-          />
-          <span class="ml-3">{{ item.name }}</span>
+          <div class="flex items-center">
+            <img src="{{ item.img }}" alt="" />
+            <span class="ml-4">{{ item.name }}</span>
+          </div>
+          <span
+            *ngIf="item.notification"
+            class="inline-flex justify-center items-center rounded-full p-3 ml-3 w-3 h-3 text-sm font-medium text-white bg-Primaryorange"
+            >{{ item.notification }}</span
+          >
         </a>
       </li>
     </ul>
-    <ul
-      class="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700"
-    >
+    <ul class="pt-3.5 border-t-2 border-neutralGrey">
+      <li class="text-darkGrey font-medium text-xs mb-4">Insights</li>
       <li *ngFor="let item of dataSidebarDown">
         <a
           href="#"
-          class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 group"
+          class="flex items-center justify-between h-[56px] text-sm font-semibold py-2 text-darkGrey"
         >
-          <img
-            class="w-6 h-6 text-gray-500 transition duration-7"
-            src="{{ item.img }}"
-            alt=""
-          />
-          <span class="ml-4">{{ item.name }}</span>
+          <div class="flex items-center">
+            <img src="{{ item.img }}" alt="" />
+            <span class="ml-4">{{ item.name }}</span>
+          </div>
+          <span
+            *ngIf="item.notification"
+            class="inline-flex justify-center items-center rounded-full p-3 ml-3 w-3 h-3 text-sm font-medium text-white bg-Primaryorange"
+            >{{ item.notification }}</span
+          >
         </a>
       </li>
     </ul>

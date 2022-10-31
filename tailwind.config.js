@@ -8,6 +8,8 @@ module.exports = {
     extend: {},
     colors: {
       darkGrey: "#808191",
+      neutralGrey: "#F0F3F6",
+      Primaryorange: "#FF754C",
     },
   },
   variants: {
