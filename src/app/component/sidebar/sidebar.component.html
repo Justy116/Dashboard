@@ -1,14 +1,23 @@
-<aside class="w-64" aria-label="Sidebar">
+<aside [className]="iconMenu ? 'widthPc' : 'widthTablet'" aria-label="Sidebar">
   <div
     class="overflow-y-auto px-5 bg-white h-screen border-r-2 border-neutralGrey"
   >
-    <a href="/overview">
+    <div class="flex items-center">
+      <a href="/overview">
+        <img
+          *ngIf="iconMenu"
+          src="../../../assets/icon/logo.svg"
+          class="my-12"
+          alt="logo"
+        />
+      </a>
       <img
-        src="../../../assets/icon/logo.svg"
-        class="my-12"
-        alt="Flowbite Logo"
+        (click)="toggleMenu()"
+        class="cursor-pointer lg:hidden"
+        src="../../../assets/icon/burger-icon.svg"
+        alt="burger icon"
       />
-    </a>
+    </div>
     <ul class="pb-10">
       <li class="text-darkGrey font-medium text-xs mb-4 ml-5">Admin tools</li>
       <li *ngFor="let item of dataSidebarUp">
@@ -17,11 +26,12 @@
           class="flex items-center justify-between h-[56px] text-sm font-semibold rounded-xl px-5 py-2 text-darkGrey bg-white hover:bg-primaryPurple hover:text-white"
         >
           <div class="flex items-center">
-            <img src="{{ item.img }}" alt="" />
-            <span class="ml-4">{{ item.name }}</span>
+            <img src="{{ item.img }}" alt="{{ item.name }}" />
+            <!-- <img src="{{ item.imgLight }}" alt="{{ item.name }}" /> -->
+            <span *ngIf="textMenu" class="ml-4">{{ item.name }}</span>
           </div>
           <span
-            *ngIf="item.notification"
+            *ngIf="item.notification && notification"
             class="inline-flex justify-center items-center rounded-full h-6 w-6 text-sm font-semibold text-white bg-primaryorange"
             >{{ item.notification <= 9 ? item.notification : "9+" }}</span
           >
@@ -36,11 +46,12 @@
           class="flex items-center justify-between h-[56px] text-sm font-semibold rounded-xl px-5 py-2 text-darkGrey bg-white hover:bg-primaryPurple hover:text-white"
         >
           <div class="flex items-center">
-            <img src="{{ item.img }}" alt="" />
-            <span class="ml-4">{{ item.name }}</span>
+            <img src="{{ item.img }}" alt="{{ item.name }}" />
+            <!-- <img src="{{ item.imgLight }}" alt="{{ item.name }}" /> -->
+            <span *ngIf="textMenu" class="ml-4">{{ item.name }}</span>
           </div>
           <span
-            *ngIf="item.notification"
+            *ngIf="item.notification && notification"
             class="inline-flex justify-center items-center rounded-full h-6 w-6 text-sm font-semibold text-white bg-primaryorange"
             >{{ item.notification <= 9 ? item.notification : "9+" }}</span
           >
