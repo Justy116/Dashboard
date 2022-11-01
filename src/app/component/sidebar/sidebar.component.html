@@ -1,6 +1,10 @@
-<aside [className]="iconMenu ? 'widthPc' : 'widthTablet'" aria-label="Sidebar">
+<aside [className]="iconMenu ? 'w-64' : 'w-24'" aria-label="Sidebar">
   <div
-    class="overflow-y-auto px-5 bg-white h-screen border-r-2 border-neutralGrey"
+    [className]="
+      iconMenu
+        ? 'px-5 overflow-y-auto bg-white h-screen border-r-2 border-neutralGrey'
+        : 'px2.5 overflow-y-auto bg-white h-screen border-r-2 border-neutralGrey'
+    "
   >
     <div class="flex items-center">
       <a href="/overview">
@@ -23,7 +27,11 @@
       <li *ngFor="let item of dataSidebarUp">
         <a
           href="{{ item.urlPage }}"
-          class="flex items-center justify-between h-[56px] text-sm font-semibold rounded-xl px-5 py-2 text-darkGrey bg-white hover:bg-primaryPurple hover:text-white"
+          [className]="
+            iconMenu
+              ? 'flex items-center justify-between h-[56px] text-sm font-semibold rounded-xl px-5 py-2 text-darkGrey bg-white hover:bg-primaryPurple hover:text-white'
+              : 'flex items-center justify-center h-[56px] text-sm font-semibold rounded-xl px-5 py-2 text-darkGrey bg-white hover:bg-primaryPurple hover:text-white'
+          "
         >
           <div class="flex items-center">
             <img src="{{ item.img }}" alt="{{ item.name }}" />
@@ -43,7 +51,11 @@
       <li *ngFor="let item of dataSidebarDown">
         <a
           href="{{ item.urlPage }}"
-          class="flex items-center justify-between h-[56px] text-sm font-semibold rounded-xl px-5 py-2 text-darkGrey bg-white hover:bg-primaryPurple hover:text-white"
+          [className]="
+            iconMenu
+              ? 'flex items-center justify-between h-[56px] text-sm font-semibold rounded-xl px-5 py-2 text-darkGrey bg-white hover:bg-primaryPurple hover:text-white'
+              : 'flex items-center justify-center h-[56px] text-sm font-semibold rounded-xl px-5 py-2 text-darkGrey bg-white hover:bg-primaryPurple hover:text-white'
+          "
         >
           <div class="flex items-center">
             <img src="{{ item.img }}" alt="{{ item.name }}" />
