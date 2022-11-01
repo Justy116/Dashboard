@@ -9,7 +9,8 @@ module.exports = {
     colors: {
       darkGrey: "#808191",
       neutralGrey: "#F0F3F6",
-      Primaryorange: "#FF754C",
+      primaryorange: "#FF754C",
+      primaryPurple: "#6C5DD3",
     },
   },
   variants: {
