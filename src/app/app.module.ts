@@ -14,6 +14,7 @@ import { InboxComponent } from './pages/inbox/inbox.component';
 import { NotificationComponent } from './pages/notification/notification.component';
 import { CommentComponent } from './pages/comment/comment.component';
 import { AccountSettingComponent } from './pages/account-setting/account-setting.component';
+import { CardChartComponent } from './component/card-chart/card-chart.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AccountSettingComponent } from './pages/account-setting/account-setting
     InboxComponent,
     NotificationComponent,
     CommentComponent,
-    AccountSettingComponent
+    AccountSettingComponent,
+    CardChartComponent
   ],
   imports: [
     BrowserModule,

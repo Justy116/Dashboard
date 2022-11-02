@@ -17,20 +17,43 @@
       </a>
       <img
         (click)="toggleMenu()"
-        class="cursor-pointer lg:hidden"
+        [className]="
+          iconMenu
+            ? 'cursor-pointer lg:hidden'
+            : 'cursor-pointer m-auto border-b-2 border-neutralGrey p-5'
+        "
         src="../../../assets/icon/burger-icon.svg"
         alt="burger icon"
       />
     </div>
     <ul class="pb-10">
-      <li class="text-darkGrey font-medium text-xs mb-4 ml-5">Admin tools</li>
+      <li>
+        <a href="/overview">
+          <img
+            [className]="
+              iconMenu ? 'cursor-pointer hidden' : 'cursor-pointer py-2.5'
+            "
+            src="../../../assets/icon/logo-small.svg"
+            alt="logo"
+          />
+        </a>
+      </li>
+      <li
+        [className]="
+          iconMenu
+            ? 'text-darkGrey font-medium text-xs mb-4 ml-5'
+            : 'text-darkGrey font-medium text-xs mb-4 flex justify-center'
+        "
+      >
+        Admin tools
+      </li>
       <li *ngFor="let item of dataSidebarUp">
         <a
           href="{{ item.urlPage }}"
           [className]="
             iconMenu
               ? 'flex items-center justify-between h-[56px] text-sm font-semibold rounded-xl px-5 py-2 text-darkGrey bg-white hover:bg-primaryPurple hover:text-white'
-              : 'flex items-center justify-center h-[56px] text-sm font-semibold rounded-xl px-5 py-2 text-darkGrey bg-white hover:bg-primaryPurple hover:text-white'
+              : 'flex items-center justify-center h-[56px] text-sm font-semibold rounded-xl mx-5 text-darkGrey bg-white hover:bg-primaryPurple hover:text-white'
           "
         >
           <div class="flex items-center">
@@ -47,14 +70,22 @@
       </li>
     </ul>
     <ul class="border-t-2 pt-10 border-neutralGrey">
-      <li class="text-darkGrey font-medium text-xs mb-4 ml-5">Insights</li>
+      <li
+        [className]="
+          iconMenu
+            ? 'text-darkGrey font-medium text-xs mb-4 ml-5'
+            : 'text-darkGrey font-medium text-xs mb-4 flex justify-center'
+        "
+      >
+        Admin tools
+      </li>
       <li *ngFor="let item of dataSidebarDown">
         <a
           href="{{ item.urlPage }}"
           [className]="
             iconMenu
               ? 'flex items-center justify-between h-[56px] text-sm font-semibold rounded-xl px-5 py-2 text-darkGrey bg-white hover:bg-primaryPurple hover:text-white'
-              : 'flex items-center justify-center h-[56px] text-sm font-semibold rounded-xl px-5 py-2 text-darkGrey bg-white hover:bg-primaryPurple hover:text-white'
+              : 'flex items-center justify-center h-[56px] text-sm font-semibold rounded-xl mx-4 text-darkGrey bg-white hover:bg-primaryPurple hover:text-white'
           "
         >
           <div class="flex items-center">
